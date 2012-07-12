@@ -43,11 +43,13 @@ if (isset($_REQUEST['users'])) {
 		if (empty($c)) {
 			throw new Exception("[\"error occured\"]");
 		}
+		if ($c > 7) { $c = 7; }
 		foreach($data->data as $item) {
 			echo "\"".$item->username."\"";
 			if ($i < $c) {
 				echo ",";
 			}
+			if ($i == $c) { break; }
 			$i++;
 		}
 	} catch (Exception $e) {

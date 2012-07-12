@@ -97,7 +97,7 @@ if (isset($_REQUEST['id'])) {
 			<span id="headerName" style="padding-left:10px; font-size:20px;">Recent Photos</span><br /><br />
 			<?php foreach ($data->data as $item) { ?>
 				<div id='thumbs'>
-					<a class='group2' rel='group2' href="#" title="<?php if(isset($item->caption) != null) { echo $item->caption->text; } ?>">
+					<a class='group2' rel='group2' href="p.php?id=<?php echo $item->id; ?>" title="<?php if(isset($item->caption) != null) { echo $item->caption->text; } ?>">
 						<img id='img' src="<?php echo $item->images->thumbnail->url; ?>" title="<?php echo $item->filter; ?>"></a>
 						<span class='filterName'><b><?php echo $item->filter; ?></b></span>
 						<span class='commentsCount' id='comments'><?php echo $item->comments->count; ?></span>
@@ -111,8 +111,9 @@ if (isset($_REQUEST['id'])) {
 			}
 			?>
 		</div>
+		
 	</div>
-
+<?php include 'footer.php'; ?>
 <?php require 'js/scripts.php'; ?>
 
 </body>

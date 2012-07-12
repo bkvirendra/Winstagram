@@ -1,5 +1,4 @@
 <?php
-
 if (isset($_REQUEST['id'])) {
 	require 'ajax/config.php';
 	$id = trim($_REQUEST['id']);
@@ -22,11 +21,9 @@ if (isset($_REQUEST['id'])) {
 		$likesCount = $data->data->likes->count;
 		$commentsCount = $data->data->comments->count;
 	}
-
 } else {
 	include 'error.php'; exit();
 }
-
 ?>
 <?php require 'meta.php'; ?> 
 <?php 
@@ -95,8 +92,9 @@ if ($data->data->caption != null) { $title = $data->data->caption->text." | Phot
 			<div class="fb-comments" href="http://winstagram.net" data-num-posts="1" data-width="245" data-colorscheme="light"></div>
 		</div>
 	</div>
+	
 </div>
-
+<?php include 'footer.php'; ?>
 <?php require 'js/scripts.php'; ?>
 
 </body>
